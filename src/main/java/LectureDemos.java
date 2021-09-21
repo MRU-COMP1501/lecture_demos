@@ -1,6 +1,7 @@
 public class LectureDemos {
     static public void main(String[] args) {
-        Lecture04 l4 = new Lecture04();
-        l4.run();
+        Lecture04 lecture = new Lecture04();
+
+        lecture.singleVsDouble();
     }
 }
