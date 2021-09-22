@@ -14,7 +14,7 @@ public class Lecture04 {
         System.out.println(circumference);
 
         int triangleHeight = 5;
-        int triangleWidth = 3;
+        double triangleWidth = 3.0;
         double triangleArea = triangleHeight * triangleWidth / 2;
         System.out.print("triangleArea: ");
         System.out.println(triangleArea);
