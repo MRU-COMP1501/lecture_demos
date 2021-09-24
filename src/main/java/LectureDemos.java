@@ -1,7 +1,6 @@
 public class LectureDemos {
     static public void main(String[] args) {
-        Lecture04 lecture = new Lecture04();
-
-        lecture.floatingPointExactness();
+        Lecture05 lecture = new Lecture05();
+        lecture.stringConcat();
     }
 }
