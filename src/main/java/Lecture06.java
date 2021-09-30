@@ -115,7 +115,9 @@ public class Lecture06 {
         System.out.print("What is the price? ");
         double price = input.nextDouble();
 
-        if (price > 128) {
+        // Correction from lecture as delivered, originally this condition
+        // was just price > 128
+        if (price >= 128) {
             price = price * (1 - BIG_DISCOUNT);
         } else {
             price = price * (1 - SMALL_DISCOUNT);
