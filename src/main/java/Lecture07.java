@@ -16,11 +16,11 @@ public class Lecture07 {
         // demo without break or statement
     }
 
-    public void enumDemo() {
-        // enum with drink order
-    }
-
     public void nestedIf() {
         // Drink order
+    }
+
+    public void danglingIf() {
+        // Drink order again
     }
 }

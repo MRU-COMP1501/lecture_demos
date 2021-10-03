@@ -6,6 +6,6 @@ public class LectureDemos {
         Lecture07 l07 = new Lecture07();
 
         // Change this line to call the method you want to test
-        l07.enumDemo();
+        l07.caffeineDemo();
     }
 }
