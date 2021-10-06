@@ -7,6 +7,6 @@ public class LectureDemos {
         Lecture08 l08 = new Lecture08();
 
         // Change this line to call the method you want to test
-        l08.assignmentDemo();
+        l08.deMorganSimplify();
     }
 }
