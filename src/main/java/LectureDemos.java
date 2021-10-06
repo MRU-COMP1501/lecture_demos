@@ -4,8 +4,9 @@ public class LectureDemos {
         Lecture05 l05 = new Lecture05();
         Lecture06 l06 = new Lecture06();
         Lecture07 l07 = new Lecture07();
+        Lecture08 l08 = new Lecture08();
 
         // Change this line to call the method you want to test
-        l07.danglingIf();
+        l08.assignmentDemo();
     }
 }

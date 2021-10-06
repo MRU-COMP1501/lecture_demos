@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 public class Lecture08 {
+    public void assignmentDemo() {
+        // repeat, variable format
+    }
+
     public void enumClassExample() {
         // Happy in enum
     }
@@ -27,6 +31,9 @@ public class Lecture08 {
 
     public void deMorganSimplify() {
         // no pets allowed except cats
+//        !(A && B) is the same as !A || !B
+//        !(A || B) is the same as !A && !B
+
     }
 
     public void inputValidation() {
