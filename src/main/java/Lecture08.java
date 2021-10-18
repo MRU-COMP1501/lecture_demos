@@ -123,8 +123,4 @@ public class Lecture08 {
             System.out.println("That's allowed");
         }
     }
-
-    public void inputValidation() {
-        // elevator
-    }
 }

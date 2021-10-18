@@ -5,8 +5,10 @@ public class LectureDemos {
         Lecture06 l06 = new Lecture06();
         Lecture07 l07 = new Lecture07();
         Lecture08 l08 = new Lecture08();
+        Lecture09 l09 = new Lecture09();
 
         // Change this line to call the method you want to test
-        l08.deMorganSimplify();
+        l09.inputValidation();
+
     }
 }
