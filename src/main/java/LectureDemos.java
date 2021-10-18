@@ -8,7 +8,7 @@ public class LectureDemos {
         Lecture09 l09 = new Lecture09();
 
         // Change this line to call the method you want to test
-        l09.inputValidation();
+        l09.inputValidationLoop();
 
     }
 }
