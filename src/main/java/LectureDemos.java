@@ -6,9 +6,9 @@ public class LectureDemos {
         Lecture07 l07 = new Lecture07();
         Lecture08 l08 = new Lecture08();
         Lecture09 l09 = new Lecture09();
+        Lecture10 l10 = new Lecture10();
 
         // Change this line to call the method you want to test
-        l09.inputValidationLoop();
-
+        l10.doWhile();
     }
 }

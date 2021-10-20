@@ -69,14 +69,6 @@ public class Lecture09 {
         System.out.println("You doubled your money in " + years + " years");
         System.out.println("Final balance: " + accountBalance);
     }
-
-    public void forLoopOddities() {
-        // weird stuff
-    }
-
-    public void forLoopCounter() {
-        // modify counter in loop
-    }
 }
 
 /**
