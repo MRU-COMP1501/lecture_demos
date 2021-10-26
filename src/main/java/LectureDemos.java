@@ -7,8 +7,9 @@ public class LectureDemos {
         Lecture08 l08 = new Lecture08();
         Lecture09 l09 = new Lecture09();
         Lecture10 l10 = new Lecture10();
+        Lecture11 l11 = new Lecture11();
 
         // Change this line to call the method you want to test
-        l10.doWhile();
+        l11.whileDoWhile();
     }
 }
