@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Lecture11 {
@@ -74,5 +75,39 @@ public class Lecture11 {
 //        }
 
         System.out.println("The average score is " + total / nGrades);
+    }
+
+    void findCaps() {
+        // loop over a string and look for capitals
+        System.out.print("Enter your name: ");
+        String name = input.nextLine();
+        String initials = "";
+
+//        for () {
+//
+//        }
+
+        System.out.println("Your initials are " + initials);
+    }
+
+    void palindromeDetector() {
+        // Prompts the user to enter a word and outputs if it is a palindrome or not
+        System.out.println("Enter a word");
+        String word = input.next();
+        int length = word.length();
+        boolean palindrome = true;
+        for (int i = 0; i < length / 2; i++) {
+            char first = word.charAt(i);
+            char last = word.charAt(length - 1 - i);
+            if (first != last) {
+                palindrome = false;
+            }
+        }
+
+        if (palindrome) {
+            System.out.println(word + " is a palindrome!");
+        } else {
+            System.out.println(word + " is not a palindrome :(");
+        }
     }
 }
