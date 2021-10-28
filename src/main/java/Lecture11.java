@@ -7,7 +7,7 @@ public class Lecture11 {
     void whileDoWhile() {
         // change to x < 0 to show difference
         System.out.println("while loop: ");
-        int x = 0;
+        int x = 4;
         while (x < 3) {
             System.out.print(x + " ");
             x++;
@@ -16,7 +16,7 @@ public class Lecture11 {
         System.out.println("\nDone");
         System.out.println("do while:");
 
-        x = 0;
+        x = 4;
         do {
             System.out.print(x + " ");
             x++;
@@ -27,7 +27,7 @@ public class Lecture11 {
 
     void doWhileValidation() {
         // A better example than in Lecture 10
-        double value;
+        int value;
 
         do {
             System.out.print("Enter a value between 0 and 100: ");
@@ -40,25 +40,43 @@ public class Lecture11 {
 
     void countdownForLoop() {
         // blastoff
+        /// could also write countdown = countdown - 1;
+        for (int countdown = 10; countdown > 0; countdown--) {
+            System.out.print(countdown + "... ");
+        }
+        System.out.println("Blastoff!");
     }
 
     void notEqualsLoop() {
         // != 10
+        for (int num = 1; num < 10; num += 2) {
+            System.out.print(num + " ");
+        }
     }
 
     void sentinelLoop() {
         // change from for loop to sentinel
-        System.out.print("How many test grades do you want to average? ");
-        int nGrades = input.nextInt();
+//        System.out.print("How many test grades do you want to average? ");
+//        int nGrades = input.nextInt();
 
         double total = 0;
-        double grade;
+        int nGrades = 0;
 
-        for (int n = 0; n < nGrades; n++) {
+        System.out.print("Enter grades, -1 to finish: ");
+        double grade = input.nextDouble();
+
+        while (grade != -1) {
+            nGrades++;
+            total += grade;
             System.out.print("Enter the next grade: ");
             grade = input.nextDouble();
-            total += grade; // same as total = total + grade
         }
+
+//        for (int n = 0; n < nGrades; n++) {
+//            System.out.print("Enter the next grade: ");
+//            grade = input.nextDouble();
+//            total += grade; // same as total = total + grade
+//        }
         System.out.println("The average score is " + total / nGrades);
     }
 
@@ -69,10 +87,11 @@ public class Lecture11 {
         int nGrades = 0;
 
         System.out.print("Enter grades to average, Q to quit: ");
-
-//        while () {
-//
-//        }
+        while (input.hasNextDouble()) {
+            grade = input.nextDouble();
+            total += grade;
+            nGrades++;
+        }
 
         System.out.println("The average score is " + total / nGrades);
     }
@@ -83,51 +102,16 @@ public class Lecture11 {
         String name = input.nextLine();
         String initials = "";
 
-//        for () {
-//
-//        }
-
-        System.out.println("Your initials are " + initials);
-    }
-
-    void palindromeDetector() {
-        // Prompts the user to enter a word and outputs if it is a palindrome or not
-        System.out.print("Enter a word: ");
-        String word = input.next();
-        String reversed = "";
-        int length = word.length();
-
-        for (int i = 0; i < length; i++) {
-            reversed = word.substring(i,i+1) + reversed;
-        }
-
-        if (word.equals(reversed)) {
-            System.out.println(word + " is a palindrome!");
-        } else {
-            System.out.println(word + " is not a palindrome :(");
-        }
-    }
-
-    void palindromeHalfLoopDetector() {
-        // Prompts the user to enter a word and outputs if it is a palindrome or not
-        // Loops through half the word only
-        System.out.print("Enter a word: ");
-        String word = input.next();
-        int length = word.length();
-        boolean palindrome = true;
-
-        for (int i = 0; i < length / 2; i++) {
-            char first = word.charAt(i);
-            char last = word.charAt(length - 1 - i);
-            if (first != last) {
-                palindrome = false;
+        for (int i = 0; i < name.length(); i++) {
+            // N A M E
+            // 0 1 2 3
+            String character = name.substring(i,i+1);
+            if (character.equals(character.toUpperCase()) &&
+                !character.equals(" ")) {
+                initials += character;
             }
         }
 
-        if (palindrome) {
-            System.out.println(word + " is a palindrome!");
-        } else {
-            System.out.println(word + " is not a palindrome :(");
-        }
+        System.out.println("Your initials are " + initials);
     }
 }

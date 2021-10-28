@@ -10,6 +10,6 @@ public class LectureDemos {
         Lecture11 l11 = new Lecture11();
 
         // Change this line to call the method you want to test
-        l11.whileDoWhile();
+        l11.findCaps();
     }
 }
