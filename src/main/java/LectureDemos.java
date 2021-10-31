@@ -8,8 +8,9 @@ public class LectureDemos {
         Lecture09 l09 = new Lecture09();
         Lecture10 l10 = new Lecture10();
         Lecture11 l11 = new Lecture11();
+        Lecture12 l12 = new Lecture12();
 
         // Change this line to call the method you want to test
-        l11.findCaps();
+        l12.palindromeDetector();
     }
 }
