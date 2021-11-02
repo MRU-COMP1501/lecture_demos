@@ -9,9 +9,9 @@ public class LectureDemos {
         Lecture10 l10 = new Lecture10();
         Lecture11 l11 = new Lecture11();
         Lecture12 l12 = new Lecture12();
+        Lecture13 l13 = new Lecture13();
 
         // Change this line to call the method you want to test
-        l12.countVowelMatches();
-
+        l13.mainEntryMethod();
     }
 }
