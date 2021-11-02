@@ -11,6 +11,7 @@ public class LectureDemos {
         Lecture12 l12 = new Lecture12();
 
         // Change this line to call the method you want to test
-        l12.palindromeDetector();
+        l12.countVowelMatches();
+
     }
 }
