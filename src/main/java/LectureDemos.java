@@ -13,5 +13,12 @@ public class LectureDemos {
 
         // Change this line to call the method you want to test
         l13.mainEntryMethod();
+
+        int randomInt = getRandomInt();
     }
+
+    static int getRandomInt() {
+        return (int)(Math.random() * 10);
+    }
+
 }

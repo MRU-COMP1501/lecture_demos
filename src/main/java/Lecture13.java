@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Lecture13 {
@@ -10,7 +11,17 @@ public class Lecture13 {
         System.out.println("Welcome to the demo!");
 
         // prompt the user to enter a string, then do some manipulation on it
-        String str = input.nextLine();
+        System.out.print("Enter a string: ");
+        String inputString = input.nextLine();
+
+        int numCapitalLetters = numCapitals(inputString);
+        System.out.print("Original String: " + inputString + "\n");
+        System.out.printf("There are %d capital letters\n",numCapitalLetters);
+
+        String doubled = repeatStringTwice(inputString);
+        System.out.println(doubled);
+
+        System.out.println(nCopies(inputString,4));
     }
 
     /**
@@ -19,7 +30,15 @@ public class Lecture13 {
      * @return number of capital letters
      */
     int numCapitals(String str) {
-        return 0;
+        int count = 0;
+        str = str.replace(' ','a');
+        for (int i = 0; i < str.length(); i++){
+            String letter = str.substring(i,i+1);
+            if (letter.equals(letter.toUpperCase()))
+                count++;
+        }
+        System.out.print("String inside method: " + str + "\n");
+        return count;
     }
 
     /**
@@ -27,8 +46,8 @@ public class Lecture13 {
      * @param str input string
      * @return two copies of str
      */
-    String doubleUp(String str) {
-        return "";
+    String repeatStringTwice(String strung) {
+        return nCopies(strung,2);
     }
 
     /**
@@ -37,24 +56,11 @@ public class Lecture13 {
      * @param N integer number of copies
      * @return str repeated N times
      */
-    String nUp(String str, int N) {
-        return "";
-    }
-
-    /**
-     * Example of modifying an input argument
-     * @param x input
-     * @return integer output
-     */
-    int modArgument(int x) {
-        return 0;
-    }
-
-    /**
-     * Nested Loop example.
-     * Prints out all the pairs of dice values and
-     * counts how many succeed.
-     */
-    void nestedLoop() {
+    String nCopies(String str, int N) {
+        String copied = "";
+        for (int i = 0; i < N; i++) {
+            copied += str + " ";
+        }
+        return copied;
     }
 }
