@@ -71,6 +71,7 @@ public class Lecture12 {
         System.out.print("Guess a number between 1 and 10: ");
         while (guess != number) {
             guess = input.nextInt();
+            input.nextLine(); // clear the newline left in the buffer
 
             if (guess != number) {
                 System.out.println("Guess again!");
@@ -89,6 +90,7 @@ public class Lecture12 {
 
             if (input.hasNextInt()) {
                 number = input.nextInt();
+                input.nextLine(); // clear the newline left in the buffer
             } else {
                 input.nextLine();
             }
