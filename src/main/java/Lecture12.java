@@ -90,10 +90,9 @@ public class Lecture12 {
 
             if (input.hasNextInt()) {
                 number = input.nextInt();
-                input.nextLine(); // clear the newline left in the buffer
-            } else {
-                input.nextLine();
             }
+
+            input.nextLine(); // clear the newline left in the buffer
 
             if (number < 0) {
                 System.out.println("Sorry, please try again");
