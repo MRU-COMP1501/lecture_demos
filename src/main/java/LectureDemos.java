@@ -10,15 +10,16 @@ public class LectureDemos {
         Lecture11 l11 = new Lecture11();
         Lecture12 l12 = new Lecture12();
         Lecture13 l13 = new Lecture13();
+        Lecture14 l14 = new Lecture14();
 
         // Change this line to call the method you want to test
-        l13.mainEntryMethod();
+        l14.scannerIssue();
 
+        // Shows how to call a method in the same class as main (must be static)
         int randomInt = getRandomInt();
     }
 
     static int getRandomInt() {
         return (int)(Math.random() * 10);
     }
-
 }
