@@ -13,7 +13,7 @@ public class LectureDemos {
         Lecture14 l14 = new Lecture14();
 
         // Change this line to call the method you want to test
-        l14.scannerIssue();
+        l14.refactorMe("popcorn");
 
         // Shows how to call a method in the same class as main (must be static)
         int randomInt = getRandomInt();
