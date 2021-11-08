@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Lecture14 {
     Scanner input = new Scanner(System.in);
     Die d4 = new Die(4);
+    int roll = d4.roll();
 
     /**
      * Demonstrates problem with repeatedly calling nextInt
@@ -13,10 +14,9 @@ public class Lecture14 {
             System.out.print("Enter a positive integer: ");
             if (input.hasNextInt()) {
                 value = input.nextInt();
-            } else {
-                String invalid = input.nextLine();
-                System.out.println("Invalid input: " + invalid);
             }
+            input.nextLine();
+
             if (value < 0) {
                 System.out.println("Sorry, try again");
             }
@@ -29,7 +29,7 @@ public class Lecture14 {
     void returnUnused() {
         double x = 2;
         System.out.printf("x = %f\n",x);
-        squareIt(x);
+        x = squareIt(x);
         System.out.printf("x = %f\n",x);
     }
 
@@ -40,8 +40,8 @@ public class Lecture14 {
      */
     double squareIt(double x) {
         // also show how result can be returned directly
-        x = x * x;
-        return x;
+//        x = x * x;
+        return x * x;
     }
 
     /**
@@ -58,6 +58,7 @@ public class Lecture14 {
             numRolls++;
         } while (roll != 4);
 
+//        System.out.print(rollString);
         System.out.printf("It took %d rolls to get a 4",numRolls);
     }
 
@@ -65,7 +66,15 @@ public class Lecture14 {
      * Also for demonstrating scope, local + global
      */
     void rollAgain() {
+        showGlobalRoll();
+        // DON'T DO THIS
         int roll = d4.roll();
+        System.out.printf("Local roll: %d\n", roll);
+        showGlobalRoll();
+    }
+
+    void showGlobalRoll() {
+        System.out.printf("Global roll: %d\n", roll);
     }
 
     /**
@@ -75,7 +84,7 @@ public class Lecture14 {
         double number = 1.0;
         String keepGoing = "yay";
         System.out.println("Enter numbers, then press q to stop.");
-        while (number > 0) {
+        while (!keepGoing.equals("q")) {
             double numerator = getValidDouble("numerator");
             double denominator = getValidDouble("denominator");
             printAsPercent(numerator,denominator);
@@ -93,7 +102,7 @@ public class Lecture14 {
         if (fraction < 1) {
             fraction *= 100;
         }
-        System.out.printf("Your fraction is %.2f%%\n" + fraction);
+        System.out.printf("Your fraction is %.2f%%\n", fraction);
     }
 
     /**
@@ -113,26 +122,5 @@ public class Lecture14 {
             input.nextLine();
             return getValidDouble(what);
         }
-    }
-
-    /**
-     * Rolls a d4 and prints out whether a snack should be eaten.
-     * Stops executing when a 4 is rolled.
-     */
-    void refactorMe(String snack) {
-       int roll = d4.roll();
-
-       do {
-           if (roll == 1 && snack.equals("candy")) {
-               System.out.printf("Rolled a %d? Eat that %s!\n",roll,snack);
-           } else if (roll == 1 && (snack.equals("chips") || snack.equals("popcorn"))) {
-               System.out.printf("Rolled a %d? Eat that %s!\n",roll,snack);
-           } else if (snack.equals("fruit")) {
-               System.out.printf("Rolled a %d? Eat that %s!\n",roll,snack);
-           } else {
-               System.out.printf("Sorry, rolled a %d, no %s for you\n",roll,snack);
-           }
-           roll = d4.roll();
-       } while (roll != 4);
     }
 }
