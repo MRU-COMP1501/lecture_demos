@@ -25,6 +25,14 @@ public class Lecture15 {
     }
 
     /**
+     * Contrived example to declare and call different methods,
+     * passing information between them.
+     */
+    void callAndPass() {
+        String word = input.nextLine();
+    }
+
+    /**
      * Rolls a d4 and prints out whether a snack should be eaten.
      * Stops executing when a 4 is rolled.
      */

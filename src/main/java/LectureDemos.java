@@ -11,9 +11,10 @@ public class LectureDemos {
         Lecture12 l12 = new Lecture12();
         Lecture13 l13 = new Lecture13();
         Lecture14 l14 = new Lecture14();
+        Lecture15 l15 = new Lecture15();
 
         // Change this line to call the method you want to test
-        l14.getValidDouble("number");
+        l15.callAndPass();
 
         // Shows how to call a method in the same class as main (must be static)
 //        int randomInt = getRandomInt();
