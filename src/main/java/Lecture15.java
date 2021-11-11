@@ -11,11 +11,12 @@ public class Lecture15 {
      */
     int readAccountNumber() {
         int accountNum = -1;
-        while (true) {
+        boolean keepLooping = true;
+        while (keepLooping) {
             System.out.print("Enter the account number: ");
             if (input.hasNextInt()) {
                 accountNum = input.nextInt();
-                break;
+                keepLooping = false;
             } else {
                 System.out.print("Sorry, try again\n");
                 input.nextLine();
@@ -29,7 +30,28 @@ public class Lecture15 {
      * passing information between them.
      */
     void callAndPass() {
-        String word = input.nextLine();
+        System.out.print("Enter a phrase: ");
+        String phrase = input.nextLine();
+//        boolean sss = hasLetterS(phrase);
+//        printMessage(sss);
+        printMessage(hasLetterS(phrase));
+    }
+
+    boolean hasLetterS(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 's' || str.charAt(i) == 'S') {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    void printMessage(boolean hasS) {
+        if (hasS) {
+            System.out.println("wow, that's quite the S");
+        } else {
+            System.out.println("Nope");
+        }
     }
 
     /**
