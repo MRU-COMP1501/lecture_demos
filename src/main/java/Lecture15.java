@@ -76,3 +76,31 @@ public class Lecture15 {
         } while (roll != 4);
     }
 }
+
+// Yahtzee algorithm sample
+//    Problem: which Yahtzee strategy is better?
+//    Approach: try each thousands of times (millions?)
+//    - define the two scenarios:
+//    - roll one die twice to try to get a 4
+//    - roll two dice up to twice to try to get a 4/6 or 4/1
+//
+//    Breakdown:
+//    - main method (run) to loop over trials and count successes
+//    - method to ask the user how many trials
+//    - method to execute scenario 1 and scenario 2
+//    - scenario 1 is simple:
+//    - roll a die, if 4 return true
+//    - roll again, if 4 return true
+//    else return false
+//
+//    - scenario 2
+//    - roll both dice, [if 4/6 or 4/1, return true] -> magicCombo
+//    - else [if 4, 6, or 1] -> keepRoll
+//    - reroll the other die, [if 4/6 or 4/1, return true] -> magicCombo
+//
+//    - scenario 2 rewritten:
+//    roll dice, if magicCombo, return true
+//    if keepRoll, reroll the other
+//    if magicCombo, return true
+//    reroll both, if magicCombo, return true
+//    else return false
