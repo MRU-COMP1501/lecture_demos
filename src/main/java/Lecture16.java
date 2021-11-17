@@ -93,7 +93,7 @@ public class Lecture16 {
      * Also, use a String array.
      */
     void enhancedFor() {
-        String[] lunch = {"sandwich","rice","apple","candy"};
+        String[] lunch = {"sandwich", "rice", "apple", "candy"};
 
         for (String food : lunch) {
             System.out.print(food + ", ");
