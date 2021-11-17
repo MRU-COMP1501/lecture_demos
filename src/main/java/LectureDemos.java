@@ -18,7 +18,7 @@ public class LectureDemos {
         Lecture17 l17 = new Lecture17();
 
         // Change this line to call the method you want to test
-        l17.arrayOfObjects();
+        l17.addElementInOrder();
 
         // Shows how to call a method in the same class as main (must be static)
 //        int randomInt = getRandomInt();
