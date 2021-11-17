@@ -88,4 +88,31 @@ public class Lecture17 {
 
         values[addIndex] = 4;
     }
+
+    /**
+     * Create a char array containing all the letters of the english alphabet.
+     * @return alphabet
+     */
+    char[] getAlphabet() {
+        char[] alphabet = new char[26];
+        for (int i = 0; i < 26; i++) {
+            alphabet[i] = (char)('a' + i);
+        }
+        return alphabet;
+    }
+
+    /**
+     * Shifts each character in the input array by the specified shift value.
+     * @param alphabet input alphabet
+     * @param shift amount to shift by
+     * @return shifted alphabet
+     */
+    char[] shiftAlphabet(char[] alphabet, int shift) {
+        char[] shifted = alphabet;
+        for (int i = 0; i < alphabet.length; i++) {
+            int letterNum = (alphabet[i] + shift);
+            shifted[i] = (char)(letterNum);
+        }
+        return shifted;
+    }
 }
