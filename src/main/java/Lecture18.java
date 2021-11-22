@@ -12,8 +12,10 @@ public class Lecture18 {
 
         for (int row = 0; row < nRows; row++) {
             for (int col = 0; col < nCols; col++) {
-                // Randomly assign a mine to true/false
                 mines[row][col] = Math.random() < percentMines;
+                if (mines[row][col]) {
+                    System.out.printf("Mine at (%d,%d)\n",row,col);
+                }
             }
         }
         printMinesweeperBoard(mines);
@@ -52,6 +54,12 @@ public class Lecture18 {
                 // add some more
         };
 
+        int first = 'c' - 'a'; // map letter c to index position
+        int last = 'd' - 'a';
+
+        String superHeroName = supers[first][0] + " " + supers[last][1];
+//        System.out.println("My superhero name is " + superHeroName);
+
         // find a superhero name
 
         return supers;
@@ -64,17 +72,27 @@ public class Lecture18 {
         // make an arraylist and add
         ArrayList<String> names = new ArrayList<String>();
         String[][] supers = makeFixed2Darray();
+
         names.add("Amazing Machine");
         names.add("Magnificent Master");
 
         Die d4 = new Die(4);
-        names.add(supers[d4.roll()][0] + " " + supers[d4.roll()][1]);
+        for (int i = 0; i < 5; i++) {
+            names.add(supers[d4.roll()][0] + " " + supers[d4.roll()][1]);
+        }
 
-        // print out
-        // insert with add(index,element)
-        // remove with name, index
-        // get/set
-        // size
+        System.out.println(names);
+        names.add(1,"INTERRUPTION");
+        names.add(5,"INTERRUPTION");
+        System.out.println(names);
+        names.remove("INTERRUPTION");
+        System.out.println(names);
+        names.remove(4);
+//        names.add(20,"INTERRUPTION");
+        supers[0][0] = "fred";
+        names.set(0, "fred");
+
+        System.out.printf("There are %d elements in names\n",names.size());
     }
 
     /**
@@ -89,7 +107,16 @@ public class Lecture18 {
         breakfast.add("Maple syrup");
         breakfast.add("Coffee");
 
-        // do some copying and equality checking
+//        ArrayList<String> food = breakfast; // creates new pointer to same dat
+        ArrayList<String> food = new ArrayList<String>(breakfast);
+//        food.set(0,"Pancakes");
+        System.out.println(breakfast);
+        System.out.println(food);
+
+        System.out.println(food == breakfast);
+        System.out.println(food.equals(breakfast));
+        ArrayList<ArrayList<String>> nestedList = new ArrayList<ArrayList<String>>();
+
     }
 
     /**
