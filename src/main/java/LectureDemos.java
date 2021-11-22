@@ -16,9 +16,10 @@ public class LectureDemos {
         Lecture15 l15 = new Lecture15();
         Lecture16 l16 = new Lecture16();
         Lecture17 l17 = new Lecture17();
+        Lecture18 l18 = new Lecture18();
 
         // Change this line to call the method you want to test
-        l17.arrayOfObjects();
+        l18.demoArrayList();
 
         // Shows how to call a method in the same class as main (must be static)
 //        int randomInt = getRandomInt();
