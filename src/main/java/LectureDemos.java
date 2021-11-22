@@ -19,7 +19,7 @@ public class LectureDemos {
         Lecture18 l18 = new Lecture18();
 
         // Change this line to call the method you want to test
-        l18.demoArrayList();
+        l18.makeMinesweeperBoard();
 
         // Shows how to call a method in the same class as main (must be static)
 //        int randomInt = getRandomInt();
