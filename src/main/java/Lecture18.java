@@ -118,10 +118,4 @@ public class Lecture18 {
         ArrayList<ArrayList<String>> nestedList = new ArrayList<ArrayList<String>>();
 
     }
-
-    /**
-     * Show how boxing/unboxing works
-     */
-    void demoAutoBox() {
-    }
 }

@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class LectureDemos {
     static public void main(String[] args) {
@@ -17,9 +16,11 @@ public class LectureDemos {
         Lecture16 l16 = new Lecture16();
         Lecture17 l17 = new Lecture17();
         Lecture18 l18 = new Lecture18();
+        Lecture19 l19 = new Lecture19();
 
         // Change this line to call the method you want to test
-        l18.arrayListCopy();
+        l19.demoAutoBox();
+
         // Shows how to call a method in the same class as main (must be static)
 //        int randomInt = getRandomInt();
     }
