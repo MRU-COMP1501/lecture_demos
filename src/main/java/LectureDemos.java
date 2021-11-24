@@ -1,6 +1,8 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class LectureDemos {
-    static public void main(String[] args) {
+    static public void main(String[] args) throws IOException {
         Lecture04 l04 = new Lecture04();
         Lecture05 l05 = new Lecture05();
         Lecture06 l06 = new Lecture06();
@@ -19,8 +21,8 @@ public class LectureDemos {
         Lecture19 l19 = new Lecture19();
 
         // Change this line to call the method you want to test
-        l19.demoAutoBox();
-
+//        l19.scanAllLines("src\\main\\java\\Lecture19.java");
+        l19.demo2D();
         // Shows how to call a method in the same class as main (must be static)
 //        int randomInt = getRandomInt();
     }

@@ -1,8 +1,4 @@
-5
-4
-6
-7
-not a number
-8
-9
-10
+cats
+books
+bikes
+board games
