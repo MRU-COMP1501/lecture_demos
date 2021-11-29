@@ -86,5 +86,4 @@ public class Lecture20 {
 //                System.out.printf("Occupied overnight: %d of %d\n", overnight, capacity);
         }
     }
-
 }
