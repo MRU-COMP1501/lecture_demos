@@ -19,12 +19,10 @@ public class LectureDemos {
         Lecture17 l17 = new Lecture17();
         Lecture18 l18 = new Lecture18();
         Lecture19 l19 = new Lecture19();
+        Lecture20 l20 = new Lecture20();
 
         // Change this line to call the method you want to test
-//        l19.scanAllLines("src\\main\\java\\Lecture19.java");
-        l19.demo2D();
-        // Shows how to call a method in the same class as main (must be static)
-//        int randomInt = getRandomInt();
+        l20.demoFileHandler("input.txt");
     }
 
     static int getRandomInt() {
