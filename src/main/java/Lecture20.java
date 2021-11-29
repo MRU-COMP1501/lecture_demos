@@ -23,6 +23,24 @@ public class Lecture20 {
     }
 
     /**
+     * Demo Scanner with hasNextInt() and nextInt()
+     * @param inFile filename to read
+     */
+    void calculateAverage(String inFile) throws FileNotFoundException {
+        File fHandle = new File(inFile);
+        Scanner fInput = new Scanner(fHandle);
+        int sum = 0;
+        int counter = 0;
+
+        while(fInput.hasNext()) {
+            // read integers
+        }
+
+        fInput.close();
+        System.out.printf("The average of all the integers is %d\n",sum / counter);
+    }
+
+    /**
      * Read a CSV file using a Scanner
      * @param inFile file to read
      * @return ArrayList of strings in the file
