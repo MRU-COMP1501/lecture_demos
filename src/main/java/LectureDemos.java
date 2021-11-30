@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class LectureDemos {
     static public void main(String[] args) throws IOException {
@@ -22,7 +23,9 @@ public class LectureDemos {
         Lecture20 l20 = new Lecture20();
 
         // Change this line to call the method you want to test
-        l20.demoFileHandler("input.txt");
+        String csvFile = "Calgary_Emergency_Shelters_Daily_Occupancy.csv";
+        ArrayList<ArrayList<String>> csvArr = l20.readCSVBetter(csvFile);
+        l20.printFirstN(csvArr,10);
     }
 
     static int getRandomInt() {

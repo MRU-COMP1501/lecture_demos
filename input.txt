@@ -1,4 +1,4 @@
-cats
-books
-bikes
-board games
+cats: 1
+books: 300
+bikes: 3
+board games: 25

@@ -9,6 +9,20 @@ public class Lecture20 {
      * @param inFile filename to read
      */
     void demoFileHandler(String inFile) {
+        String fileContents = FileHandler.readFile(inFile);
+
+        if (fileContents.equals("")) { // or fileContents.isEmpty()
+            System.out.println(inFile + " not found");
+        } else {
+            System.out.println("File contents: ");
+            System.out.println(fileContents);
+
+            boolean success = FileHandler.writeFile("NewFile.txt", fileContents);
+            if (success) {
+                System.out.println("Writing successful.");
+            }
+        }
+
     }
 
     /**
@@ -18,8 +32,15 @@ public class Lecture20 {
     void consumesWhitespace(String inFile) throws FileNotFoundException {
         File fHandle = new File(inFile);
         Scanner fInput = new Scanner(fHandle);
+        ArrayList<String> tokens = new ArrayList<String>();
 
-        // .next
+        while (fInput.hasNext()) {
+            tokens.add(fInput.next());
+        }
+        fInput.close();
+
+        System.out.println(tokens);
+
     }
 
     /**
@@ -33,7 +54,12 @@ public class Lecture20 {
         int counter = 0;
 
         while(fInput.hasNext()) {
-            // read integers
+            if (fInput.hasNextInt()) {
+                sum += fInput.nextInt();
+                counter++;
+            } else {
+                String token = fInput.next();
+            }
         }
 
         fInput.close();
@@ -50,8 +76,11 @@ public class Lecture20 {
         File fHandle = new File(inFile);
         Scanner fInput = new Scanner(fHandle);
         ArrayList<String> fileContents = new ArrayList<String>();
+        fInput.useDelimiter("[,\r\n]");
 
-        // setup scanner to read csv with [,\n]
+        while (fInput.hasNext()) {
+            fileContents.add(fInput.next());
+        }
 
         return fileContents;
     }
@@ -62,7 +91,7 @@ public class Lecture20 {
      * @param N number to print
      */
     void printFirstN(ArrayList<ArrayList<String>> twoDArrayList, int N) {
-        // print out the first five rows
+        // print out the first N rows
         for (int i = 0; i < N; i++) {
             System.out.println(twoDArrayList.get(i));
         }
@@ -81,12 +110,23 @@ public class Lecture20 {
         // Loop over fInput, then lineScanner
         while (fInput.hasNextLine()) {
             String line = fInput.nextLine();
-            // Scanner for each line, create new arraylist, add each token
-            // add to fileContents
+            Scanner lineScanner = new Scanner(line);
+            lineScanner.useDelimiter(",");
+            ArrayList<String> row = new ArrayList<String>();
+            while (lineScanner.hasNext()) {
+                String token = lineScanner.next();
+                row.add(token);
+            }
+            fileContents.add(row);
         }
         fInput.close();
 
         return fileContents;
+    }
+
+    boolean isInAlphabet(char ch) {
+//        Character.isLetter(ch); includes non-Latin letters
+        return ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z';
     }
 
     /**
