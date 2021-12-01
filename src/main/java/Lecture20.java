@@ -128,20 +128,4 @@ public class Lecture20 {
 //        Character.isLetter(ch); includes non-Latin letters
         return ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z';
     }
-
-    /**
-     * Prints out the occupancy for Calgary shelter data
-     * @param data 2D ArrayList of shelter data
-     */
-    void printAverageOccupancy(ArrayList<ArrayList<String>> data) {
-        final int CAPACITY_IDX = 8;
-        final int OVERNIGHT_IDX = 9;
-
-        // loop through the rows and add calculate the occupancy as percent capacity
-        for (int row = 1; row < data.size(); row++) {
-//                int capacity = ?;
-//                int overnight = ?;
-//                System.out.printf("Occupied overnight: %d of %d\n", overnight, capacity);
-        }
-    }
 }

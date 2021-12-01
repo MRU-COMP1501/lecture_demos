@@ -21,11 +21,10 @@ public class LectureDemos {
         Lecture18 l18 = new Lecture18();
         Lecture19 l19 = new Lecture19();
         Lecture20 l20 = new Lecture20();
+        Lecture21 l21 = new Lecture21();
 
         // Change this line to call the method you want to test
-        String csvFile = "Calgary_Emergency_Shelters_Daily_Occupancy.csv";
-        ArrayList<ArrayList<String>> csvArr = l20.readCSVBetter(csvFile);
-        l20.printFirstN(csvArr,10);
+        l21.showPublicDanger();
     }
 
     static int getRandomInt() {

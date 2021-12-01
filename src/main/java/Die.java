@@ -1,12 +1,17 @@
 import java.util.ArrayDeque;
 import java.util.Random;
 
+/**
+ * Implements a pseudorandom number generator.
+ * Has a fixed number of sides, generates a uniformly distributed integer.
+ */
+
 public class Die {
-    final int[] VALID_DICE = {4, 6, 8, 10, 12, 20};
-    Random roller = new Random();
-    int nSides;
-    boolean rigged = false;
-    ArrayDeque<Integer> riggedSequence = new ArrayDeque<>();
+    private final int[] VALID_DICE = {4, 6, 8, 10, 12, 20};
+    private Random roller = new Random();
+    private int nSides;
+    private boolean rigged = false;
+    private ArrayDeque<Integer> riggedSequence = new ArrayDeque<>();
 
     // Constructor to create a die with any number of valid sides
     public Die(int nSides) {
@@ -31,7 +36,11 @@ public class Die {
         this(6);
     }
 
-    // method to roll the die
+    /**
+     * method to roll the die
+     * @return die roll
+     * @throws ArrayIndexOutOfBoundsException
+     */
     public int roll() throws ArrayIndexOutOfBoundsException {
         if (rigged) {
             if (riggedSequence.isEmpty()) {
@@ -44,6 +53,10 @@ public class Die {
         }
     }
 
+    /**
+     * Sets a predictable sequence of die rolls
+     * @param sequence array of integers
+     */
     public void setRiggedSequence(int[] sequence) {
         // method to rig the die
         riggedSequence.clear();
@@ -55,6 +68,9 @@ public class Die {
         rigged = true;
     }
 
+    /**
+     * Method to undo the rigging.
+     */
     public void unRig() {
         riggedSequence.clear();
         rigged = false;
