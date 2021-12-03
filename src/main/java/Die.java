@@ -7,14 +7,18 @@ import java.util.Random;
  */
 
 public class Die {
-    private final int[] VALID_DICE = {4, 6, 8, 10, 12, 20};
-    private Random roller = new Random();
-    private int nSides;
+    private static final int[] VALID_DICE = {4, 6, 8, 10, 12, 20};
+    private final Random roller = new Random();
+    private final int N_SIDES;
     private boolean rigged = false;
-    private ArrayDeque<Integer> riggedSequence = new ArrayDeque<>();
+    private final ArrayDeque<Integer> riggedSequence = new ArrayDeque<>();
 
-    // Constructor to create a die with any number of valid sides
-    public Die(int nSides) {
+    /**
+     * Constructor to take a specific number of sides.
+     * @param nSides in VALID_DICE.
+     * @throws IllegalArgumentException if nSides is invalid
+     */
+    public Die(int nSides) throws IllegalArgumentException {
         // Loop through the list of valid dice and make sure nSides is in there
         boolean valid = false;
         for (int side : VALID_DICE) {
@@ -28,18 +32,18 @@ public class Die {
         if (!valid)
             throw new IllegalArgumentException("Invalid number of sides");
 
-        this.nSides = nSides;
+        N_SIDES = nSides;
     }
 
     // default constructor to create a D6
     public Die() {
-        this(6);
+        N_SIDES = 6;
     }
 
     /**
      * method to roll the die
      * @return die roll
-     * @throws ArrayIndexOutOfBoundsException
+     * @throws ArrayIndexOutOfBoundsException if dice are rigged and the sequence is empty
      */
     public int roll() throws ArrayIndexOutOfBoundsException {
         if (rigged) {
@@ -49,7 +53,7 @@ public class Die {
                 return riggedSequence.pop();
             }
         } else {
-            return roller.nextInt(nSides) + 1;
+            return roller.nextInt(N_SIDES) + 1;
         }
     }
 
