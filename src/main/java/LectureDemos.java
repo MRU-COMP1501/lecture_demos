@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class LectureDemos {
+    private int numLectures = 0;
+
     static public void main(String[] args) throws IOException {
         Lecture04 l04 = new Lecture04();
         Lecture05 l05 = new Lecture05();
@@ -25,6 +27,15 @@ public class LectureDemos {
 
         // Change this line to call the method you want to test
         Lecture22 l22 = new Lecture22();
+//        System.out.println(l22.getNumAttendees());
+//        System.out.println(l22.name);
+//        l22.setNumAttendees(-2);
+        l22.printDie();
+//        Lecture22 anotherLecture = new Lecture22();
+//
+//        l22.setNumAttendees(20);
+//        System.out.println(anotherLecture.getNumAttendees());
+//        System.out.println(l22.getNumAttendees());
     }
 
     static int getRandomInt() {

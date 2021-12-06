@@ -12,7 +12,7 @@ public class Die {
     private final int N_SIDES;
     private boolean rigged = false;
     private final ArrayDeque<Integer> riggedSequence = new ArrayDeque<>();
-
+    private int lastRolled;
     /**
      * Constructor to take a specific number of sides.
      * @param nSides in VALID_DICE.
@@ -50,11 +50,12 @@ public class Die {
             if (riggedSequence.isEmpty()) {
                 throw new ArrayIndexOutOfBoundsException();
             } else {
-                return riggedSequence.pop();
+                lastRolled = riggedSequence.pop();
             }
         } else {
-            return roller.nextInt(N_SIDES) + 1;
+            lastRolled = roller.nextInt(N_SIDES) + 1;
         }
+        return lastRolled;
     }
 
     /**
@@ -78,5 +79,9 @@ public class Die {
     public void unRig() {
         riggedSequence.clear();
         rigged = false;
+    }
+
+    public String toString() {
+        return String.format("A die with %d sides\nLast rolled: %d", N_SIDES, lastRolled);
     }
 }
