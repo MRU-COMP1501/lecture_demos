@@ -1,9 +1,9 @@
 public class Lecture22 {
+    private int numAttendees;
 
     /**
      * Demonstrate the printString method
      */
-    void printDie() {
-        // instantiate and print a Die object
+    public void printDie() {
     }
 }

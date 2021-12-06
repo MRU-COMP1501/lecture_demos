@@ -24,7 +24,7 @@ public class LectureDemos {
         Lecture21 l21 = new Lecture21();
 
         // Change this line to call the method you want to test
-        l21.showPublicDanger();
+        Lecture22 l22 = new Lecture22();
     }
 
     static int getRandomInt() {
